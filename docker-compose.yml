@@ -32,7 +32,13 @@ services:
         volumes:
           # Mounts the project folder to '/workspace'. While this file is in .devcontainer,
           # mounts are relative to the first file in the list, which is a level up.
-          - .:/workspace:cached
+          - udata-sync:/workspace/udata:nocopy
+          - udata-front-sync:/workspace/udata-front:nocopy
 
         # Overrides default command so things don't shut down after the process ends.
         command: /bin/sh -c "while sleep 1000; do :; done"
+volumes:
+  udata-sync:
+    external: true
+  udata-front-sync:
+    external: true

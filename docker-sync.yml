@@ -1,0 +1,6 @@
+version: "2"
+syncs:
+  udata-sync:
+    src: "./udata"
+  udata-front-sync:
+    src: "./udata-front"
